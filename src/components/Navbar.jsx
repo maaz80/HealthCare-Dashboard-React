@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { IoClose } from 'react-icons/io5';
 
 const NavigationBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,10 +48,10 @@ const NavigationBar = () => {
 
         {/*  Menu Button mobile */}
         <div className="lg:hidden flex items-center">
-          <button onClick={handleMenuToggle} className="text-white p-3">
-            <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'}`} />
-          </button>
-        </div>
+      <button onClick={handleMenuToggle} className="text-white p-3">
+        {isMenuOpen ? <IoClose /> : <GiHamburgerMenu />}
+      </button>
+    </div>
       </div>
 
       {/*  Navigation MOBile*/}
